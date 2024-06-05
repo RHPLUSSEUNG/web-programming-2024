@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function() {
+        let input1 = document.querySelectorAll('input')[0]; // [0]이 없으면모든 input 태그 찾음
+        let input2 = document.querySelectorAll('input')[1];
+
+        input1.onkeydown = function() { //input다운에 키보드 리스너 할당
+            if(input1.value.length >= 6) {
+                input2.focus();
+            }
+        };
+        input2.onkeydown = function() {
+            if(event.key == "Backspace" && input2.value.length == 0) { //keyCode보다는 key를 사용하는것이 좋다, 운영체제에 따라서 호환됨
+                input1.focus();
+                }
+        };
+    }
+    </script>
+  </head>
+  <body>
+    <input type="text" maxlength="6" />
+    <span>-</span>
+    <input type="text" maxlength="7" />
+  </body>
+</html>

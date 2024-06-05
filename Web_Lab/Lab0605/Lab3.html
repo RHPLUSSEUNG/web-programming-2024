@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(
+            function() {
+                let appendDoc = function() {
+                    for(let i=0; i<20; i++) {
+                        $('<h1>무한 스크롤</h1>').appendTo('body');
+                    }
+                };
+
+                appendDoc();
+
+                $(window).scroll(
+                    function() {
+                        let scrollHeight = $(window).scrollTop() + $(window).height();
+                        let docHeight = $(document).height();
+
+                        console.log('scrollHeight: ' + scrollHeight);
+                        console.log('docHeight: ' + docHeight);
+                        
+                        if((scrollHeight + 50) > docHeight) {
+                            appendDoc();
+                        }
+                    }                    
+                );
+            }
+        );
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

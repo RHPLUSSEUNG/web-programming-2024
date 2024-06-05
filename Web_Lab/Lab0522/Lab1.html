@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      window.onload = function () {
+        //let header = document.querySelector('#header'); //html 전체 코드중에서 id가 header인 코드를 가져와라
+        //let header = document.querySelector('h1');
+        let headers = document.querySelectorAll("h1");
+
+        // for(let i = 0; i < headers.length; i++)
+        // {
+        //     let header = headers[i];
+        //     header.style.color = 'yellow';
+        //     header.style.background = 'grey';
+        //     header.innerHTML = 'Yeongnam University' + i;
+        // }
+
+        for (let header of headers) {
+          //foreach
+          header.style.color = "orange";
+          header.style.background = "lightblue";
+          header.innerHTML = "Yeongnam University";
+        }
+
+        let output = document.body.innerHTML;
+        console.log("innerHTML:" + output);
+        //output = document.body.textContent;
+        //console.log("textContent:" + output);
+
+        for (let i = 0; i < 10; i++) {
+          output += "<h1>Header - " + i + "</h1>";
+        }
+
+        for (let i = 0; i < 256; i++) {
+          output += "<div></div>";
+        }
+
+        //document.body.textContent = output; //태그로 인식 하지 않고 태그 자체로만 텍스트로만 인식
+        document.body.innerHTML = output; //태그로 인식
+
+        let divs = document.querySelectorAll("div");
+
+        for (
+          let i = 0;
+          i < divs.length;
+          i++ //그라데이션
+        ) {
+          let div = divs[i];
+          div.style.height = "2px";
+          div.style.background = "rgb(" + i + ", " + i + ", " + i + ")";
+        }
+
+        document.body.setAttribute("data-YU", "영대컴공!"); //검사에선 data-yu로 소문자로 보임 대소문자 구분을 안한다는것
+
+        let clock = document.querySelector("#header");
+
+        setInterval(
+          function () {
+            let now = new Date();
+            clock.innerHTML = now.toString();
+          },
+          1000 //1000ms = 1초, 1초동안 반복
+        );
+
+        document.querySelector('#btn').onclick = function(){
+            this.textContent = this.textContent + '*';
+        }
+        
+      };
+    </script>
+  </head>
+  <body>
+    <h1 id="header">영남대학교</h1>
+    <button id="btn">눌러주세요 -</button>
+    <h1>컴퓨터공학과</h1>
+    <h1>Computer</h1>
+  </body>
+</html>
