@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0">
+    <title>반응형 웹 패턴1</title>
+    <!-- HTML 태그 구성은 모바일 장치를 기준으로 (모바일 퍼스트) -->
+    <!-- float 태그의 left와 right를 활용해 적당한 위치에 놓아둠 -->
+
+    <!-- 데스크톱 메뉴 좌 모바일 메뉴 위 #menu{float:left}, #menu{left or right} -->
+    <!-- 데스크톱 메뉴 오 모바일 메뉴 위 #menu{float:right}, #menu{left} -->
+    <!-- 데스크톱 메뉴 왼 모바일 메뉴 아래 #menu{float:left}, #menu{left or right} -->
+    <!-- 데스크톱 메뉴 오 모바일 메뉴 아래 #menu{float:right}, #menu{left} -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;            
+        }
+
+        body{
+            width: 960px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #menu{
+            width: 260px;
+            float: left;
+        }
+        #section{
+            width: 700px;
+            float: right; /*left도 상관 x */
+        }
+
+        li{list-style: none;}
+
+        @media screen and(max-width: 767px){
+            /* 스마트폰 사이즈에서는 전부 해제 */
+            body{width: auto}
+            #menu{width: auto; float: none;}
+            #section{width: auto; float: none;}
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li>메뉴A</li>
+            <li>메뉴B</li>
+            <li>메뉴C</li>
+            <li>메뉴D</li>
+        </ul>
+    </div>
+    <div id="section">
+        <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis totam corrupti labore necessitatibus, distinctio ut pariatur veniam voluptatibus atque similique tempora quis nemo expedita sunt minima enim quas nisi in.</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae consectetur nesciunt laborum veniam voluptatibus deserunt ut autem. Non minus aperiam, qui magni nostrum voluptas fugit minima temporibus? Repellat, excepturi deleniti?</p>
+    </div>
+</body>
+</html>
