@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object create</title>
+    <script>
+        let product = {
+            제품명: '건조 망고',
+            유형: '당절임',
+            성분: '망고, 설탕, 메타중아황산나트륨, 치자황색소',
+            원산지: '필리핀'
+        }
+        // 제품명: 키, 건조 망고: 값 / 객체 뒤 .을 입력하여 속성에 접근
+        // 요소: 배열에 있는 값 하나하나, 속성: 객체에 있는 값 하나하나
+        for(let i in product){
+            alert(i + ': ' + product[i]);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

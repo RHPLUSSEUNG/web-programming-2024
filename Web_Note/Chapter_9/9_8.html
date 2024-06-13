@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition Duplication</title>
+    <script>
+        let date = new Date();
+        let hours = date.getHours();
+        let month = date.getMonth() + 1;
+        if(hours < 5){
+            alert('Good night');
+        } else {
+            if(hours < 7){
+                alert('Good morning');
+            } else {
+                if(hours < 9) {
+                    alert('go');
+                } else {
+                    if(hours < 12){
+                        alert('lol');
+                    }
+                }
+            }
+        }
+
+        if(3 <= month && month <= 5) {
+            alert('Spring');            
+        } else if(6 <= month && month <= 8) {
+            alert('Summer');
+        } else if(9 <= month && month <= 11) {
+            alert('Fall');
+        } else {
+            alert('Winter');
+        }
+
+        let start = new Date().getTime();
+        let count = 0;
+
+        while(start + 1000 > new Date().getTime()){
+            count++;
+        }
+        alert(count + 'times')
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
