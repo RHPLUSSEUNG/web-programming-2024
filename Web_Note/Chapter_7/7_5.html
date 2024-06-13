@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style>
+        body{
+            width: 500px;
+            margin: 10px auto;
+        }
+        #middle{ overflow: flex;}
+        #left {width: 150px; background-color: red;}
+        #right {width: 350px; background-color: blue;}
+
+        #top {background: green;}
+        #bottom {background: purple;}
+    </style>
+</head>
+<body>
+    <div id="top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis asperiores in veniam neque nesciunt perspiciatis velit, doloribus perferendis pariatur reiciendis a qui commodi eos nemo sequi sint ullam numquam possimus!</div>
+    <div id="middle">
+        <div id="left">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+        <div id="right">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
+    </div>
+    <div id="bottom">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde inventore neque dolore esse pariatur earum autem reiciendis ut cupiditate beatae explicabo ipsa provident, quibusdam vitae atque corrupti praesentium, modi ex?</div>
+</body>
+</html>

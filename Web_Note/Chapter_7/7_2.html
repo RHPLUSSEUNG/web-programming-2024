@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float Without Overflow</title>
+    <style>
+        div.item{
+            float: left;
+            margin: 0 3px;
+            padding: 10px;
+            border: 1px solid black;
+        }    
+        div.clear {
+            clear: both; /* oveflow : hidden; 대신 쓸수 있음 */
+        }        
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia dolorum aliquid nulla error alias expedita tempore, impedit dolor dolores rem nisi velit pariatur incidunt at aliquam fuga magnam nobis sit?</p>
+    <div class="container">
+        <div class="item">메뉴 - 1</div>
+        <div class="item">메뉴 - 2</div>
+        <div class="item">메뉴 - 3</div>
+        <div class="item">메뉴 - 4</div>
+    </div>
+    <div class="clear"></div> <!--수평 정렬하고 싶은 대상 아래에 div 태그 배치-->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ipsam deserunt quaerat nihil totam a, consectetur voluptate recusandae sit dolorem. Vitae quibusdam quidem voluptatem neque pariatur fugit ea est alias.</p>
+</body>
+</html>
