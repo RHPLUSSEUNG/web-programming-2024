@@ -22,29 +22,53 @@
     ></script>
     <script>
       $(document).ready(function () {
-        let width = $('[data-role="slider"]').data("data-width");
-        let height = $('[data-role="slider"]').data("data-height");
+        // 슬라이더의 너비와 높이를 데이터 속성에서 가져옵니다.
+        var width = $('[data-role="slider"]').data("width");
+        var height = $('[data-role="slider"]').data("height");
         let count = $('[data-role="slider"] div.item').length; //[data-role="slider"] div.item 한 칸 띄웠으니 후손 선택자
 
-        $('[data-role="slider"]')
-          .css({
-            position: "relative",
-            overflow: "hidden",
-            width: width,
-            height: height,
-          })
-          .find(".container")
+        // 슬라이더 컨테이너의 스타일을 설정합니다.
+        $('[data-role="slider"] .container')
           .css({
             position: "absolute",
-            width: count * width,   
+            width: count * width, // 전체 너비는 아이템 개수에 너비를 곱한 값입니다.
             overflow: "hidden",
           })
           .find(".item")
           .css({
             width: width,
             height: height,
-            float: "left", //수평
+            float: "left", // 아이템을 수평으로 배열합니다.
           });
+
+        let currentPage = 0; // 현재 페이지를 0으로 초기화합니다.
+        let changePage = function () {
+          // 현재 페이지에 따라 슬라이더 컨테이너의 위치를 변경합니다.
+          $('[data-role="slider"] .container').animate(
+            {
+              left: -currentPage * width,
+            },
+            500
+          );
+        };
+
+        // 왼쪽 버튼 클릭 이벤트 핸들러를 추가합니다.
+        $("#left-btn").click(function () {
+          currentPage = currentPage - 1;
+          if (currentPage < 0) {
+            currentPage = count - 1; // 현재 페이지가 0보다 작아지면 마지막 페이지로 이동합니다.
+          }
+          changePage(); // 페이지를 변경하는 함수를 호출합니다.
+        });
+
+        // 오른쪽 버튼 클릭 이벤트 핸들러를 추가합니다. (추가된 부분)
+        $("#right-btn").click(function () {
+          currentPage = currentPage + 1;
+          if (currentPage >= count) {
+            currentPage = 0; // 현재 페이지가 마지막 페이지를 넘어가면 첫 페이지로 이동합니다.
+          }
+          changePage(); // 페이지를 변경하는 함수를 호출합니다.
+        });
       });
     </script>
   </head>
@@ -77,9 +101,12 @@
             maxime nisi soluta dignissimos similique quasi debitis amet odio.
           </p>
         </div>
+        <!-- 슬라이더 컨트롤 버튼 -->
+        <div class="slider-controls">
+          <button id="left-btn">왼쪽</button>
+          <button id="right-btn">오른쪽</button>
+        </div>
       </div>
-      <button id="left-btn">◀</button>
-      <button id="left-btn">▶</button>
     </div>
   </body>
 </html>
