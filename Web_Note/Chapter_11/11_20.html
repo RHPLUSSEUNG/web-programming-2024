@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        //이벤트 연결
+        $(document).ready(function(){
+            //이벤트 연결
+            $('button').click(function(){
+                //효과 적용
+                $('.page').fadeToggle('slow');
+            });
+        });
+    </script>
+</head>
+<body>
+    <button>Toggle Show</button>
+    <div class="page">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptatum cumque necessitatibus deserunt earum cum aspernatur sapiente vel consequuntur aliquam, magni eos sit blanditiis pariatur possimus magnam beatae voluptate maxime.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum iusto dolores atque, dolorum aspernatur accusamus amet excepturi. Quis, explicabo iusto! In atque sunt ea facilis distinctio enim, maiores ad libero.</p>
+    </div>
+</body>
+</html>
